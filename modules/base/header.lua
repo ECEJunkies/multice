@@ -7,5 +7,4 @@ function l()
 end
 function h(...)
  computer.pushSignal(...)
- coroutine.yield()
 end

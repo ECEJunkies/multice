@@ -36,7 +36,7 @@ Specifies where to put the output kernel.
 Simply run `build.lua`. Under OpenOS or plan9k that may just be going to the right dir and entering `build`, but under proper UNIX systems it may involve `lua build.lua`.
 
 ### Base OS API
-#### s(name,function,environment)
+#### `s(name,function,environment)`
 Spawns a process from `function` under the name `name`, with the environment table specified in `environment`. Environment doesn't really have much use right now.
 
 #### `l() `

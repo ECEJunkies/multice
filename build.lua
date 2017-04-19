@@ -92,6 +92,8 @@ replacements={
 {" %* ","*"},
 {" \n","\n"},
 {"%-%-.-\n",""},
+{"coroutine%.","C."},
+{"table%.","T."},
 }
 for k,v in ipairs(replacements) do
  while ss:find(v[1]) ~= nil do

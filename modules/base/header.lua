@@ -3,7 +3,7 @@ function s(n,f,e)
  T.insert(tT,{n,C.create(f),(e or {})})
 end
 function l()
--- return T.remove(tT[cT][3],1)
+ return eV
 end
 function h(...)
  computer.pushSignal(...)

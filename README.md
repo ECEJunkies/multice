@@ -40,7 +40,7 @@ Simply run `build.lua`. Under OpenOS or plan9k that may just be going to the rig
 Spawns a process from `function` under the name `name`, with the environment table specified in `environment`. Environment doesn't really have much use right now.
 
 #### `l() `
-Returns the last event. Doesn't actually work right now.
+Returns the last event.
 
 #### `h(...)`
 Pushes an event to the queue, with whatever data you specify. Generally used for IPC.

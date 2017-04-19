@@ -22,7 +22,7 @@ base/footer.lua
 The build system has a configuration file `build.cfg`.
 ##### `optomise`
 Can either be yes or no.  
-Specifies whether to run the simple optomisation function on the kernel.
+Specifies whether to run the simple optimisation function on the kernel.
 ##### `test`
 Can either be yes or no.  
 Specifies whether to test the final kernel (using load). Only picks up syntax errors.
@@ -46,7 +46,7 @@ Returns the last event. Doesn't actually work right now.
 Pushes an event to the queue, with whatever data you specify. Generally used for IPC.
 ### Module APIs
 #### library/print.lua
-These functions should be display device indepentent.
+These functions should be display device independent.
 ##### `print(...)`
 Displays its arguments on the display device as a string, with a newline.
 ##### `write(...)`

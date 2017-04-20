@@ -32,7 +32,8 @@ repeat
   cfg[w[1]] = w[2]
  end
 until line == nil or line == ""
-if cfg.opath == nil then cfg.opath = "kernel.lua" end
+cfg.opath = cfg.opath or "kernel.lua"
+cfg.ospath = cfg.ospath or "skernel.lua"
 print()
 -- Module list
 print("Reading modules to load")
@@ -71,48 +72,23 @@ for k,v in pairs(ts) do
 end
 print()
 
--- Optimise for space
-if cfg.optimise == "yes" then
-print("Optimising source")
-sl=tostring(ss:len())
-no=0
-replacements={
-{"  "," "},
-{"\n ","\n"},
-{"\n\n","\n"},
-{" == ","=="},
-{" ~= ","~="},
-{" >= ",">="},
-{" <= ","<="},
-{" > ",">"},
-{" < ","<"},
-{" = ","="},
-{", ",","},
-{" %+ ","+"},
-{" %- ","-"},
-{" %/ ","/"},
-{" %* ","*"},
-{" \n","\n"},
-{"%-%-.-\n",""},
-{"coroutine%.","C."},
-{"table%.","T."},
-}
-for k,v in ipairs(replacements) do
- while ss:find(v[1]) ~= nil do
-  ss=ss:gsub(v[1],v[2])
-  io.write(".")
-  no=no+1
- end
-end
-print("\nBefore: "..sl.."\nAfter: "..tostring(ss:len()).."\n"..tostring(no).." optimisations made.\n")
-end
-
 -- Output
 print("Outputting to "..cfg.opath)
 f=io.open(cfg.opath,"wb")
 f:write(ss)
 f:close()
 print("Total size: "..tostring(ss:len()).."\n")
+
+-- Optimise for space
+if cfg.optimise == "yes" then
+ if _OSVERSION ~= nil then
+  if _OSVERSION:sub(1,6) == "OpenOS" then
+   os.execute("strip "..cfg.opath.." "..cfg.ospath)
+  end
+ else
+  os.execute("lua strip.lua "..cfg.opath.." "..cfg.ospath)
+ end
+end
 
 -- Check syntax
 if cfg.test == "yes" then

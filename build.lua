@@ -21,7 +21,9 @@ ts={}
 tA = {...}
 ss=""
 cfg={}
-f=io.open("build.cfg","rb")
+cfgfile = tA[1] or "build.cfg"
+modfile = tA[2] or "modules.cfg"
+f=io.open(cfgfile,"rb")
 repeat
  line = f:read("*l")
  if line ~= nil then
@@ -35,7 +37,7 @@ print()
 -- Module list
 print("Reading modules to load")
 tm={}
-f=io.open("modules.cfg","rb")
+f=io.open(modfile,"rb")
 function nl()
  return f:read("*l")
 end

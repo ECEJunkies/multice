@@ -53,7 +53,7 @@ print("Loading modules")
 for k,v in ipairs(tm) do
  print(" - "..v.." - modules/"..v)
  f=io.open("modules/"..v,"rb")
- if cfg.optomise == "yes" then
+ if cfg.optimise == "yes" then
   data = f:read("*a")
  else
   data = "--"..v.."\n"..f:read("*a")
@@ -71,9 +71,9 @@ for k,v in pairs(ts) do
 end
 print()
 
--- Optomise for space
-if cfg.optomise == "yes" then
-print("Optomising source")
+-- Optimise for space
+if cfg.optimise == "yes" then
+print("Optimising source")
 sl=tostring(ss:len())
 no=0
 replacements={
@@ -104,7 +104,7 @@ for k,v in ipairs(replacements) do
   no=no+1
  end
 end
-print("\nBefore: "..sl.."\nAfter: "..tostring(ss:len()).."\n"..tostring(no).." optomisations made.\n")
+print("\nBefore: "..sl.."\nAfter: "..tostring(ss:len()).."\n"..tostring(no).." optimisations made.\n")
 end
 
 -- Output

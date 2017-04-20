@@ -66,6 +66,13 @@ print(tostring(#tm).." modules loaded.\n")
 
 -- Generate source
 print("Generating source")
+if cfg.listmods == "yes" then
+ ss=ss.."modules={"
+ for k,v in ipairs(tm) do
+  ss=ss..'"'..v..'",'
+ end
+ ss=ss.."}\n"
+end
 for k,v in pairs(ts) do
  ss=ss..v
  io.write(".")

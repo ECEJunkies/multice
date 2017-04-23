@@ -10,3 +10,7 @@ function frm(s)
  local d,p = fres(s)
  return d.remove(p)
 end
+function fexists(s)
+ local d,p = fres(s)
+ return d.exists(p)
+end

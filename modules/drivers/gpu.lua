@@ -12,9 +12,9 @@ if gpu and screen then
  gp.fill(1, 1, w, h, " ")
 end
 local y = 1
-function wl(msg)
+function wl(l)
  if gpu and screen and gp then
-  gp.set(1, y, msg)
+  gp.set(1, y, l)
   if y == h then
    gp.copy(1, 2, w, h - 1, 0, -1)
    gp.fill(1, h, w, 1, " ")
@@ -23,7 +23,6 @@ function wl(msg)
   end
  end
 end
-wl("GPU initialized.")
 s("display",function(...)
  while true do
   eT = ev
@@ -35,9 +34,4 @@ s("display",function(...)
   coroutine.yield()
  end
 end)
-function sbt(line)
- gp.set(1,h,tostring(line))
-end
-push("display","test")
-sbt("Test.")
 end

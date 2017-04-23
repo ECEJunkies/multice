@@ -7,7 +7,6 @@ function ns(id,po,msg)
  h("sendmsg",id,po,msg)
 end
 s("network daemon",function ()
- print("Network daemon starting.\nNetwork ID: "..tostring(nID))
  while true do
   if ev[1] == "sendmsg" then
    local eT = ev

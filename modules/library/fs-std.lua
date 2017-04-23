@@ -1,11 +1,11 @@
 hT = {["_c"]=0}
 function fopen(p,m)
  local d,p = fres(p)
- local f=d.open(p,m)
+ local f,C=d.open(p,m),hT._c
  if f then
-  hT._c = hT._c + 1
-  hT[hT._c] = {d,f}
-  return hT._c
+  hT._c = C + 1
+  hT[C] = {d,f}
+  return C
  end
  return false
 end

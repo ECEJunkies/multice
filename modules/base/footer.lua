@@ -1,8 +1,5 @@
 while #tT > 0 do
  ev={computer.pullSignal(p)}
- for k,v in ipairs(ev) do
---  wl(tostring(v))
- end
  for k,v in ipairs(tT) do
   _G.cT=k
   if C.status(v[2])~="dead" then

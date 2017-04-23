@@ -29,7 +29,6 @@ function wl(str)
   end
  end
 end
-wl("GPU initialized\n")
 
 s("display",function()
 while true do

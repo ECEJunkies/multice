@@ -1,0 +1,6 @@
+#vim
+*.swp
+#multice-specific
+kernel.lua
+skernel.lua
+init.lua

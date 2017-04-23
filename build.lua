@@ -76,11 +76,16 @@ print(tostring(#tm).." modules loaded.\n")
 -- Generate source
 print("Generating source")
 if cfg.listmods == "yes" then
- ss=ss.."modules={"
+ ss=ss.."modules,_OSVERSION={"
  for k,v in ipairs(tm) do
   ss=ss..'"'..v..'",'
  end
- ss=ss.."}\n"
+ ss=ss.."},"
+ if _OSVERSION == nil then
+  ss=ss..'"MultICE '..io.popen("git rev-parse HEAD"):read("*a"):sub(1,7)..'"\n'
+ else
+  ss=ss..'"MultICE DR0"\n'
+ end
 end
 for k,v in pairs(ts) do
  ss=ss..v

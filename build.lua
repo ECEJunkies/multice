@@ -19,10 +19,19 @@ end
 print("Initializing and reading configuration")
 ts={}
 tA = {...}
+for k,v in ipairs(tA) do
+ if type(v) == "string" then
+  if v:sub(1,10) == "--cfgfile=" then
+   cfgfile = v:sub(11)
+  elseif v:sub(1,10) == "--modfile=" then
+   modfile = v:sub(11)
+  end
+ end
+end
 ss=""
+cfgfile = cfgfile or "build.cfg"
+modfile = modfile or "modules.cfg"
 cfg={}
-cfgfile = tA[1] or "build.cfg"
-modfile = tA[2] or "modules.cfg"
 f=io.open(cfgfile,"rb")
 repeat
  line = f:read("*l")

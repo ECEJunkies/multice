@@ -14,3 +14,7 @@ function fexists(s)
  local d,p = fres(s)
  return d.exists(p)
 end
+function fisdir(s)
+ local d,p = fres(s)
+ return d.isDirectory(p)
+end

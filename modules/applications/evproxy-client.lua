@@ -1,4 +1,5 @@
 function nshc(evPP,nid)
+ write("\f")
  while true do
   if ev[1] == "net_msg" then
    local V,msg=false,tostring(ev[4])

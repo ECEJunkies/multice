@@ -1,4 +1,4 @@
-reP,tREs=4,{}
+reP,tREs="rexec",{}
 s("rexec",function()
  while true do
   if ev[1] == "net_msg" then

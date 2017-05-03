@@ -1,4 +1,4 @@
-evPP,tEPs=4,{}
+evPP,tEPs="nsh",{}
 s("netsh daemon",function()
  while true do
   if ev[1] == "net_msg" then

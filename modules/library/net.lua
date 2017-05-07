@@ -1,4 +1,4 @@
-tM,nP,nID = {}, 4096, 1
+tM,nP,nID = {}, 4096, "a"
 for a,t in component.list("modem") do
  table.insert(tM,component.proxy(a))
  component.proxy(a).open(nP)

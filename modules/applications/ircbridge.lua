@@ -3,7 +3,10 @@ function ircb(h,p,n) -- host, port
  s("IRC bridge connector", function()
   local ip,h,p = component.proxy(component.list("internet")()),h,p
   local c=ip.connect(h,p)
-  print("Connected: "..tostring(c.finishConnect()))
+  local ct = computer.uptime()
+  while computer.uptime() < ct+2 do
+   C.yield()
+  end
   if c.finishConnect() then
    local ct=computer.uptime()
    print("Connected successfully.")

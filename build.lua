@@ -1,3 +1,4 @@
+#!/usr/bin/env lua5.2
 -- Initialization
 log = ""
 oldprint=print

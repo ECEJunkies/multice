@@ -10,9 +10,7 @@ function ircb(h,p,n) -- host, port
   end
   if c.finishConnect() then
    local ct=computer.uptime()
-   print("Connected successfully.")
    local function wl(s)
-    print("-->| "..s)
     c.write(s.."\n") 
    end
    _G.wil = wl
@@ -24,7 +22,6 @@ function ircb(h,p,n) -- host, port
      wl("PONG :"..m)
     elseif tH[2] == "PRIVMSG" then
      local n,r,h = tH[1]:match("(.+)!(.+)@(.+)")
-     print(n.." ("..r.."@"..h.."): "..m)
      local t,f,p,ms = m:match("(.+),(.+),(.+),(.+)")
      if t and f and p and ms then
       t,f,p,ms = ub64(t),n..":"..ub64(f),ub64(p),ub64(ms)
@@ -33,7 +30,6 @@ function ircb(h,p,n) -- host, port
       end
      end
     else
-     print("|<-- "..line)
     end
    end
    wl("NICK "..n)
@@ -56,8 +52,6 @@ function ircb(h,p,n) -- host, port
     end
    end
   else
-   print("Failed to connect:")
-   print(c.finishConnect())
   end
  end)
  s("IRC bridge",function()

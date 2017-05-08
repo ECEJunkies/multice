@@ -4,8 +4,9 @@ function ircb(h,p,n) -- host, port
   local ip,h,p = component.proxy(component.list("internet")()),h,p
   local c=ip.connect(h,p)
   local ct = computer.uptime()
-  while computer.uptime() < ct+2 do
+  while computer.uptime() < ct+5 do
    C.yield()
+   c.finishConnect()
   end
   if c.finishConnect() then
    local ct=computer.uptime()
@@ -62,8 +63,8 @@ function ircb(h,p,n) -- host, port
  s("IRC bridge",function()
   while true do
    if ev[1] == "modem_message"then
-    local pa,pb = ev[6]:match("(.+):(.+)")
-    if pa and pb then tircb[#tircb+1] = {pa,b64(pb)..","..b64(ev[7])..","..b64(ev[8])..","..b64(ev[9])} end
+    local pa,pb = ev[7]:match("(.+):(.+)")
+    if pa and pb then tircb[#tircb+1] = {pa,b64(pb)..","..b64(ev[8])..","..b64(ev[9])..","..b64(ev[10])} end
    end
    coroutine.yield()
   end

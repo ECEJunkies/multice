@@ -22,7 +22,7 @@ function tty(gA,sA,sI,fg,bg)
    end cv()
   end
  end
- s("display: "..gA..","..sA,function()
+ s("tty: "..gA:sub(1,8)..","..sA:sub(1,8),function()
  while true do
   eT = ev
   if eT[1] == "display" and eT[3] == sI then

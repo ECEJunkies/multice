@@ -24,7 +24,7 @@ function fload(i)
    s=s..c
    c=fread(f,math.huge)
   until c == nil
-  load(s)
+  return load(s)
  end
  return false
 end

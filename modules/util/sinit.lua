@@ -17,4 +17,4 @@ s("init",function()
  if _OSVERSION and _BD then
   print("Started ".._OSVERSION.." (built at ".._BD..")")
  end
-end)
+end,{["sI"]=1})

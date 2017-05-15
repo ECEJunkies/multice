@@ -1,0 +1,5 @@
+print("","GPU: "..component.list("gpu")(),"Screen: "..component.list("screen")(),"Keyboard:"..component.list("keyboard")())
+print("Starting tty")
+tty(component.list("gpu")(),component.list("screen")(),1)
+print("Starting kbd")
+kbd(component.list("keyboard")(),1)

@@ -1,7 +1,7 @@
 function ps()
  for k,v in pairs(tT) do
   write("pid: "..tostring(k)..", process name: "..tostring(v[1])..", env={")
-  for l,w in ipairs(v[3]) do write(tostring(l).." = "..tostring(w)..", ") end
+  for l,w in pairs(v[3]) do write(tostring(l).." = "..tostring(w)..", ") end
   print("}")
  end
 end

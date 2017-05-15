@@ -10,7 +10,7 @@ function tty(gA,sA,sI,fg,bg)
   if cx > sx then cx,cy=1,cy+1 end
   if cx < 1 then cx,cy=1,cy-1 end
   if cy < 1 then cx,cy=1,1 end
-  if cy > sy then gP.copy(1,2,sx,sy-1,1,1) gP.fill(1,sx,sy,1," ") cx,cy=1,sy end
+  if cy > sy then gP.copy(1,2,sx,sy-1,0,-1) gP.fill(1,sy,sx,1," ") cx,cy=1,sy end
  end
  local function wl(str)
   for c in str:gmatch(".") do

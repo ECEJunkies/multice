@@ -1,7 +1,7 @@
 # Building MultICE
 MultICE uses a relatively simple build system. It has been tested on Arch Linux, Debian Linux, OpenOS and Plan9k.
 ## 1. Choose modules.
-The system is made out of modules from the `modules/` directory. When you run the build script, it assembles them, and optionally optomises the code for space.  
+The system is made out of modules from the `modules/` directory. When you run the build script, it assembles them, and optionally optimises the code for space.  
 There are a number of preconfigured module sets in the `config/` directory, and you can of course you can write your own.
 
 The build system defaults to a file called `modules.cfg` in the current directory. You can specify a config file using `--modconfig=file.cfg`.

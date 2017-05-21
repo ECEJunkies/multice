@@ -1,4 +1,4 @@
-function nshc(evPP,nid)
+function nshc_w(evPP,nid)
  write("\f")
  while true do
   if ev[1] == "net_msg" then
@@ -10,6 +10,19 @@ function nshc(evPP,nid)
    end
   elseif ev[1] == "key" and ev[2] == tT[cT][3].sI then
    ns(nid,evPP,"key"..tostring(ev[3]))
+  end
+  C.yield()
+ end
+end
+
+function nshc(P,nid)
+ ns(nid,P,"initnsh")
+ while true do
+  if ev[1] == "net_msg" then
+   print(T.unpack(ev))
+  end
+  if ev[1] == "net_msg" and ev[2] == nid and ev[3] == P then
+   nshc_w(ev[4],nid)
   end
   C.yield()
  end
